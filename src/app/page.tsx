@@ -2,9 +2,11 @@
 import { useSearchParams } from "next/navigation";
 import { sendTelegramMessage } from "./telegram";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   const searchParams = useSearchParams();
+  const [accepted, setAccepted] = useState(false);
 
   const person = searchParams.get('person');
 
@@ -44,9 +46,9 @@ export default function Home() {
           </h3>
           <div className="flex justify-center">
             <button className="p-4 bg-black text-white rounded-md" onClick={
-              () => sendTelegramMessage(`Hello, world from ${person}`)
-            }>
-              Подтвердить
+              () => sendTelegramMessage(`Hello, world from ${person}`).then(() => setAccepted(true))
+            } disabled={accepted}>
+              {accepted ? 'Подтверждено' : 'Подтвердить'}
             </button>
           </div>
         </div>

@@ -1,14 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Bad_Script, Inter } from "next/font/google";
-import Image from "next/image";
+import localFont from 'next/font/local';
+import { Unbounded } from "next/font/google";
 
-const badScript = Bad_Script({
-  subsets: ["latin"],
-  weight: "400",
-  variable: '--font-bad'
+const badScript = localFont({
+  src: '../../public/el_primo.otf',
+  display: 'swap',
+  variable: '--font-bad',
 });
-const inter = Inter({
+
+const inter = Unbounded({
   subsets: ["latin"],
   variable: '--font-inter'
 });
@@ -27,7 +28,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${badScript.variable} font-inter relative`}>
         {children}
-        <Image src="/leaves.avif" alt="background" fill className="-z-10"/>
       </body>
     </html>
   );

@@ -1,50 +1,87 @@
 'use client';
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { sendTelegramMessage } from "./telegram";
+import Image from "next/image";
 
 export default function Home() {
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   const person = searchParams.get('person');
 
   return (
-    <main className="flex min-h-screen flex-col gap-12 items-center px-4 py-6">
-      <section className="text-center flex gap-8 flex-col">
-        <h1 className="text-xl">
+    <main className="flex flex-col items-center">
+      <div className="h-screen relative px-10 py-52 w-full text-center flex flex-col justify-between">
+        <Image src="/background.jpg" alt="background" fill className="-z-10"/>
+        <h1 className="text-2xl">
           Приглашаем Вас на свадьбу!
         </h1>
-        <h2 className="text-4xl font-badscript font-bold">
+        <h2 className="text-5xl font-badscript font-bold">
           Данила
           <br />
           и
           <br />
           Дарья!
         </h2>
-      </section>
-      <p className="text-xl">
-        7 октября | 12:00
-      </p>
-      <div className="bg-orange-200 p-8 prose">
-        <h3 className="text-2xl font-badscript text-center">
-          Дорогой гость!
-        </h3>
-        <p>
-          Мы рады сообщить Вам, что состоится самое главное мероприятие
-          в нашей жизни - день нашей свадьбы!
+        <p className="text-2xl">
+          7 октября | 12:00
         </p>
-        <p>
-          Приглашаем Вас разделить с нами радость этого незабываемого дня.
-        </p>
-        <h3 className="text-2xl font-badscript text-center">
-          Ждём Вас!
-        </h3>
-        <div className="flex justify-center">
-          <button className="p-4 bg-black text-white rounded-md" onClick={
-            () => sendTelegramMessage(`Hello, world from ${person}`).then(() => router.push('/schedule'))
-          }>
-            Подтвердить
-          </button>
+      </div>
+      <div className="h-screen relative px-12 py-20 w-full flex items-center">
+        <Image src="/background.jpg" alt="background" fill className="-z-10"/>
+        <div className="bg-orange-200 p-8 prose text-center">
+          <h3 className="text-2xl font-badscript">
+            Дорогой гость!
+          </h3>
+          <p>
+            Мы рады сообщить Вам, что состоится самое главное мероприятие
+            в нашей жизни - день нашей свадьбы!
+          </p>
+          <p>
+            Приглашаем Вас разделить с нами радость этого незабываемого дня.
+          </p>
+          <h3 className="text-2xl font-badscript text-center">
+            Ждём Вас!
+          </h3>
+          <div className="flex justify-center">
+            <button className="p-4 bg-black text-white rounded-md" onClick={
+              () => sendTelegramMessage(`Hello, world from ${person}`)
+            }>
+              Подтвердить
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="h-screen relative px-8 py-20 w-full flex flex-col justify-between">
+        <Image src="/background.jpg" alt="background" fill className="-z-10"/>
+        <h1 className="text-5xl font-badscript text-center">
+          Свадебное расписание
+        </h1>
+        <table className="text-sm">
+          <tr>
+            <td>
+              12:20
+              07.10.2023
+            </td>
+            <td className="p-4">
+              <b>ЗАГС Петрозаводского района</b>
+              <br />
+              Санкт-Петербург, Торговая площадь, 5, Петергоф
+            </td>
+          </tr>
+          <tr>
+            <td>
+              15:00
+              07.10.2023
+            </td>
+            <td className="p-4">
+              <b>Банкетный зал &quot;Александрия-Петергоф&quot;</b>
+              <br />
+              Санкт-Петербургское шоссе, 1345
+            </td>
+          </tr>
+        </table>
+        <div className="w-full relative h-[200px] rounded-lg overflow-hidden">
+          <Image src="/map.jpg" alt="map" fill />
         </div>
       </div>
     </main>

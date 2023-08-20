@@ -26,7 +26,7 @@ export default function Home() {
           7 октября | 12:00
         </p>
       </div>
-      <div className="h-screen relative px-12 py-20 w-full flex items-center">
+      <div className="h-screen relative px-12 py-20 w-full flex flex-col items-center justify-center">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
         <div className="bg-orange-200 p-8 prose text-center">
           <h3 className="text-2xl font-badscript">
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-screen relative px-8 py-20 w-full flex flex-col justify-between">
+      <div className="h-screen relative px-8 py-20 w-full flex flex-col justify-between items-center">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
         <h1 className="text-5xl font-badscript text-center">
           Свадебное расписание
@@ -80,9 +80,7 @@ export default function Home() {
             </td>
           </tr>
         </table>
-        <div className="w-full relative h-[200px] rounded-lg overflow-hidden">
-          <Image src="/map.jpg" alt="map" fill />
-        </div>
+        <Image src="/map.jpg" alt="map" width="300" height="200" className="md:opacity-0" />
       </div>
     </main>
   )

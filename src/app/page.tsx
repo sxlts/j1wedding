@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { sendTelegramMessage } from "./telegram";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -44,13 +45,15 @@ export default function Home() {
           <h3 className="text-2xl font-badscript text-center">
             Ждём Вас!
           </h3>
-          <div className="flex justify-center">
-            <button className="p-4 bg-black text-white rounded-md" onClick={
-              () => sendTelegramMessage(`Hello, world from ${person}`).then(() => setAccepted(true))
-            } disabled={accepted}>
-              {accepted ? 'Подтверждено' : 'Подтвердить'}
-            </button>
-          </div>
+          <Link href="https://pornhub.com">
+            <div className="flex justify-center">
+              <button className="p-4 bg-black text-white rounded-md" onClick={
+                () => sendTelegramMessage(`Hello, world from ${person}`).then(() => setAccepted(true))
+              } disabled={accepted}>
+                {accepted ? 'Подтверждено' : 'Подтвердить'}
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="h-screen relative px-8 py-20 w-full flex flex-col justify-between items-center">

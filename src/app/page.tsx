@@ -12,21 +12,21 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center">
-      <div className="h-screen relative px-10 py-60 w-full text-center flex flex-col justify-between">
+      <div className="h-screen relative px-10 w-full text-center flex items-center flex-col justify-center">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
         <p className="text-2l">
           Приглашаем на
           <br />
           свадьбу!
         </p>
-        <p className="text-6xl font-badscript font-bold">
+        <h2 className="space-y-2 py-10 text-6xl font-badscript font-bold">
           Данила
           <br />
           &
           <br />
-          Дарья!
-        </p>
-        <p className="text-2l">
+          Дарья
+        </h2>
+        <p className="py-10 text-2l">
           7 октября | 12:00
         </p>
       </div>

@@ -12,26 +12,28 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center">
-      <div className="h-screen relative px-10 py-52 w-full text-center flex flex-col justify-between">
+      <div className="h-screen relative px-10 py-60 w-full text-center flex flex-col justify-between">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
-        <h1 className="text-2xl">
-          Приглашаем Вас на свадьбу!
-        </h1>
-        <h2 className="text-5xl font-badscript font-bold">
+        <p className="text-2l">
+          Приглашаем на
+          <br />
+          свадьбу!
+        </p>
+        <p className="text-6xl font-badscript font-bold">
           Данила
           <br />
-          и
+          &
           <br />
           Дарья!
-        </h2>
-        <p className="text-2xl">
+        </p>
+        <p className="text-2l">
           7 октября | 12:00
         </p>
       </div>
       <div className="h-screen relative px-12 py-20 w-full flex flex-col items-center justify-center">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
         <div className="bg-orange-200 p-8 prose text-center">
-          <h3 className="text-2xl font-badscript">
+          <h3 className="text-3xl font-badscript font-bold">
             Дорогой гость!
           </h3>
           <p>
@@ -41,7 +43,7 @@ export default function Home() {
           <p>
             Приглашаем Вас разделить с нами радость этого незабываемого дня.
           </p>
-          <h3 className="text-2xl font-badscript text-center">
+          <h3 className="text-3xl font-badscript text-center font-bold">
             Ждём Вас!
           </h3>
           <div className="flex justify-center">
@@ -55,13 +57,13 @@ export default function Home() {
       </div>
       <div className="h-screen relative px-8 py-20 w-full flex flex-col justify-between items-center">
         <Image src="/background.jpg" alt="background" fill className="-z-10"/>
-        <h1 className="text-5xl font-badscript text-center">
+        <h1 className="text-5xl font-badscript font-bold text-center">
           Свадебное расписание
         </h1>
         <table className="text-sm">
           <tr>
             <td>
-              12:20
+              11:50
               07.10.2023
             </td>
             <td className="p-4">

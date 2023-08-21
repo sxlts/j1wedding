@@ -80,7 +80,7 @@ export default function Home() {
             <td className="p-4">
               <b>Банкетный зал &quot;Александрия-Петергоф&quot;</b>
               <br />
-              Санкт-Петербургское шоссе, 134b
+              Санкт-Петербургское шоссе, 134Б
             </td>
           </tr>
         </table>
